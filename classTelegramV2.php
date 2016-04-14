@@ -29,7 +29,7 @@ class TelegramBotV2{
         $data['timeout'] = $timeout;
         return $this->Request("getUpdates", $data);
     }
-		
+
 		/**
 		 * @param String    url
 		 * @param string    certificate
@@ -42,7 +42,7 @@ class TelegramBotV2{
         $data['certificate'] = $certificate;
         return $this->Request("setWebhook", $data);
     }
-		
+
 		/**
 		 * @link https://core.telegram.org/bots/api#getme
 		 * A simple method for testing your bot's auth token.
@@ -52,7 +52,7 @@ class TelegramBotV2{
     public function getMe(){
         return $this->Request('getMe');
     }
-		
+
     /**
      * @param int|String  chat_id
      * @param string      text
@@ -75,7 +75,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->Request("sendMessage", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param int         from_chat_id
@@ -93,7 +93,7 @@ class TelegramBotV2{
         $data["message_id"] = $message_id;
         return $this->Request("forwardMessage", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param string      photo
@@ -114,7 +114,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->Request("sendPhoto", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param string      audio
@@ -139,7 +139,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->RequestFile("sendAudio", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param string      document
@@ -160,7 +160,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->RequestFile("sendDocument", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param string      sticker
@@ -179,7 +179,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->RequestFile("sendSticker", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param string      video
@@ -206,7 +206,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->RequestFile("sendVideo", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param string      voice
@@ -227,7 +227,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->RequestFile("sendVoice", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param float       latitude
@@ -248,7 +248,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->Request("sendLocation", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param float       latitude
@@ -275,7 +275,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->Request("sendVenue", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param string      phone_number
@@ -298,7 +298,7 @@ class TelegramBotV2{
         $data["reply_markup"] = $reply_markup;
         return $this->Request("sendContact", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param string      action
@@ -311,7 +311,7 @@ class TelegramBotV2{
         $data["action"]= $action; // typing,upload_photo,record_video,upload_video,record_audio,upload_audio,upload_document,find_location
         return $this->Request("sendChatAction", $data);
     }
-		
+
 		/**
 		 * @param int		user_id
 		 * @param int   offset
@@ -326,12 +326,12 @@ class TelegramBotV2{
         $data['limit'] = $limit;
         return $this->Request("getUserProfilePhotos", $data);
     }
-		
+
 		/**
 		 * @param int		chat_id
 		 * @param int   user_id
 		 * @link https://core.telegram.org/bots/api#kickchatmember
-		 * Use this method to kick a user from a group or a supergroup. 
+		 * Use this method to kick a user from a group or a supergroup.
 		 * @return Response
 		 */
     public function kickChatMember($chat_id, $user_id){
@@ -339,12 +339,12 @@ class TelegramBotV2{
         $data["user_id"]= $user_id;
         return $this->Request("kickChatMember", $data);
     }
-		
+
 		/**
 		 * @param int		chat_id
 		 * @param int   user_id
 		 * @link https://core.telegram.org/bots/api#unbanchatmember
-		 * Use this method to unban a previously kicked user in a supergroup. 
+		 * Use this method to unban a previously kicked user in a supergroup.
 		 * @return Response
 		 */
     public function unbanChatMember($chat_id, $user_id){
@@ -352,7 +352,7 @@ class TelegramBotV2{
         $data["user_id"]= $user_id;
         return $this->Request("unbanChatMember", $data);
     }
-		
+
 		/**
 		 * @param String	 callback_query_id
 		 * @param String   text
@@ -367,7 +367,7 @@ class TelegramBotV2{
         $data["show_alert"]= $alert;
         return $this->Request("answerCallbackQuery", $data);
     }
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param int         message_id
@@ -390,7 +390,7 @@ class TelegramBotV2{
 				$data["reply_markup"] = $reply_markup;
 				return $this->Request("editMessageText", $data);
 		}
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param int         message_id
@@ -409,7 +409,7 @@ class TelegramBotV2{
 				$data["reply_markup"] = $reply_markup;
 				return $this->Request("editMessageCaption", $data);
 		}
-		
+
 		/**
 		 * @param int|String  chat_id
 		 * @param int         message_id
@@ -426,7 +426,7 @@ class TelegramBotV2{
 				$data["reply_markup"] = $reply_markup;
 				return $this->Request("editMessageReplyMarkup", $data);
 		}
-		
+
 		/**
 		 * @param String  file_id
 		 * @link https://core.telegram.org/bots/api#getfile
